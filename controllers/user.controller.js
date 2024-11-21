@@ -11,6 +11,9 @@ const registerUser = asyncHandler( async (req, res) => {
     //check for user creation
     //return res
 
+    req.body
+    
+
     
 
 
