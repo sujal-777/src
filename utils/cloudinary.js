@@ -24,6 +24,7 @@ import fs from "fs";
             //file has been uploaded
             console.log("File is uploaded",
             response.url);
+            fs.unlink(localFilePath)
             return response;
             
         } catch (error) {
@@ -34,7 +35,8 @@ import fs from "fs";
     }
 
 
-    export default {uploadOnCloudinary}
+
+export { uploadOnCloudinary }
 
 
     
