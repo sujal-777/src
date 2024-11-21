@@ -24,6 +24,7 @@ import fs from "fs";
             //file has been uploaded
             console.log("File is uploaded",
             response.url);
+            return response;
             
         } catch (error) {
             fs.unlinkSync(localFilePath)
@@ -32,6 +33,8 @@ import fs from "fs";
         }
     }
 
+
+    export default {uploadOnCloudinary}
 
 
     
