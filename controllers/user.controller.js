@@ -110,7 +110,7 @@ const loginUser = asyncHandler( async (req, res) => {
 
     const {email, username, password} = req.body
 
-    if (!username || !email) {
+    if (!(username || email)) {
         throw new ApiError(400, "username or email is required!")
     }
 
@@ -152,7 +152,7 @@ const loginUser = asyncHandler( async (req, res) => {
 })
 
 
-const logoutUser =  asyncHandler(async (req, res) => {
+const logoutUser = asyncHandler(async (req, res) => {
     //cokkies remover 
     //refresh token
 
@@ -168,10 +168,10 @@ const logoutUser =  asyncHandler(async (req, res) => {
         }
     )
 
-    const option = (
+    const option = {
         httpOnly : true,
         secure : true
-    )
+    }
 
     return res
     .status(200)
